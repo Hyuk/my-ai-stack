@@ -81,7 +81,7 @@ Production-grade workflows built on top of Claude Code:
 
 | Tool | Role | When I Use It |
 |------|------|--------------|
-| **OpenAI Codex CLI** | Independent second opinion | Cross-model code review, adversarial plan challenge |
+| **OpenAI Codex CLI + OMX** | Independent second opinion | Cross-model code review, adversarial plan challenge. OMX(Oh My codeX)로 Codex에도 멀티 에이전트 오케스트레이션 적용 |
 | **Antigravity** | AI-powered development environment | Collaborative AI coding with visual context |
 | **Cursor** | Visual AI code editor | When I need visual diff/context alongside AI |
 | **VS Code** | Traditional IDE | Extensions, debugging UI, git integration |
