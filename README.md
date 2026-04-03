@@ -82,6 +82,7 @@ Production-grade workflows built on top of Claude Code:
 | Tool | Role | When I Use It |
 |------|------|--------------|
 | **OpenAI Codex CLI** | Independent second opinion | Cross-model code review, adversarial plan challenge |
+| **Antigravity** | AI-powered development environment | Collaborative AI coding with visual context |
 | **Cursor** | Visual AI code editor | When I need visual diff/context alongside AI |
 | **VS Code** | Traditional IDE | Extensions, debugging UI, git integration |
 
