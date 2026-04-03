@@ -110,12 +110,13 @@ node ~/.claude/hud/omc-hud.mjs
 일반적인 기능 개발 흐름:
 
 ```
-1. 원하는 것을 설명         →  "autopilot: X를 위한 REST API 만들어줘"
-2. OMC가 자동으로 기획      →  코드베이스 탐색, 계획 수립
-3. 에이전트가 병렬 실행     →  executor가 코드 작성, designer가 UI 담당
-4. 검증 실행               →  architect가 리뷰, 테스트 통과
-5. 배포                    →  /ship으로 PR 생성, CI 실행
-6. 모니터링                →  /canary로 프로덕션 감시
+1. 아이디어 검증            →  /plan-ceo-review — 전제 검증, 10점짜리 제품 찾기
+2. 계획 수립               →  CEO 리뷰 결과를 기반으로 구조화된 계획 파일 생성
+3. 엔지니어링 검증          →  /plan-eng-review — 아키텍처, 테스트, 성능 리뷰
+4. 구현                    →  에이전트가 병렬 실행 (executor, designer 등)
+5. 코드 리뷰               →  /review — 머지 전 diff 리뷰
+6. 배포                    →  /ship — PR 생성, CI 실행
+7. 모니터링                →  /canary — 프로덕션 상태 감시
 ```
 
 ## 철학

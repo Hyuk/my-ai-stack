@@ -110,12 +110,13 @@ Displays: active mode, running agents, task progress, model usage — all in the
 A typical feature development flow:
 
 ```
-1. Describe what I want          →  "autopilot: build a REST API for X"
-2. OMC plans automatically       →  Explores codebase, creates plan
-3. Agents execute in parallel    →  executor writes code, designer handles UI
-4. Verification runs             →  architect reviews, tests pass
-5. Ship                          →  /ship creates PR, runs CI
-6. Monitor                       →  /canary watches production
+1. Idea validation               →  /plan-ceo-review — challenge premises, find the 10-star product
+2. Plan creation                 →  Create a structured plan file from CEO review output
+3. Engineering verification      →  /plan-eng-review — architecture, tests, performance review
+4. Implementation                →  Agents execute in parallel (executor, designer, etc.)
+5. Code review                   →  /review — pre-landing diff review
+6. Ship                          →  /ship — creates PR, runs CI
+7. Monitor                       →  /canary — watches production health
 ```
 
 ## Philosophy
