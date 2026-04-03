@@ -2,7 +2,7 @@
 
 English | [한국어](README_KO.md)
 
-My actual AI-powered development environment. This is how I build software in 2025 — not just writing code, but orchestrating AI agents to ship faster and better.
+My actual AI-powered development environment. This is how I build software in 2026 — not just writing code, but orchestrating AI agents to ship faster and better.
 
 ## Core: Claude Code + oh-my-claudecode
 
