@@ -79,6 +79,26 @@ Production-grade workflows built on top of Claude Code:
 | **Monitoring** | `/canary`, `/benchmark` | Post-deploy canary checks, performance regression |
 | **Documentation** | `/document-release`, `/retro` | Release docs, weekly retrospective |
 
+## AI Design Tools
+
+| Tool | Role | When I Use It |
+|------|------|--------------|
+| **Google Stitch** | AI UI prototyping | Text/image prompts → multi-screen layouts with code export |
+| **Pencil Dev** | AI-native design editor | IDE-integrated design → production-ready React components |
+
+**Design-to-Code Pipeline:**
+
+```
+Google Stitch          Figma              Pencil Dev           Code
+(prototype)    →    (design hub)    →    (componentize)    →  (implement)
+                                              │
+                                              ▼
+                                        .pen files in repo
+                                        version-controlled
+```
+
+Stitch generates rapid prototypes, exports to Figma, then Pencil Dev imports and refines into production components directly inside VS Code/Cursor.
+
 ## Other AI Tools
 
 | Tool | Role | When I Use It |
@@ -111,12 +131,14 @@ A typical feature development flow:
 
 ```
 1. Idea validation               →  /plan-ceo-review — challenge premises, find the 10-star product
-2. Plan creation                 →  Create a structured plan file from CEO review output
-3. Engineering verification      →  /plan-eng-review — architecture, tests, performance review
-4. Implementation                →  Agents execute in parallel (executor, designer, etc.)
-5. Code review                   →  /review — pre-landing diff review
-6. Ship                          →  /ship — creates PR, runs CI
-7. Monitor                       →  /canary — watches production health
+2. UI design                     →  Stitch (prototype) → Figma → Pencil Dev (componentize)
+3. Plan creation                 →  Create a structured plan file from CEO review output
+4. Engineering verification      →  /plan-eng-review — architecture, tests, performance review
+5. Implementation                →  Agents execute in parallel (executor, designer, etc.)
+6. Design QA                     →  /design-review — visual consistency, spacing, accessibility
+7. Code review                   →  /review — pre-landing diff review
+8. Ship                          →  /ship — creates PR, runs CI
+9. Monitor                       →  /canary — watches production health
 ```
 
 ## Philosophy

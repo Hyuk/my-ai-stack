@@ -79,6 +79,26 @@ Claude Code 위에 구축된 프로덕션급 워크플로우:
 | **모니터링** | `/canary`, `/benchmark` | 배포 후 카나리 체크, 성능 회귀 감지 |
 | **문서화** | `/document-release`, `/retro` | 릴리스 문서, 주간 회고 |
 
+## AI 디자인 도구
+
+| 도구 | 역할 | 사용 시점 |
+|------|------|-----------|
+| **Google Stitch** | AI UI 프로토타이핑 | 텍스트/이미지 프롬프트 → 멀티스크린 레이아웃 + 코드 익스포트 |
+| **Pencil Dev** | AI 네이티브 디자인 에디터 | IDE 통합 디자인 → 프로덕션 React 컴포넌트 생성 |
+
+**디자인-to-코드 파이프라인:**
+
+```
+Google Stitch          Figma              Pencil Dev            코드
+(프로토타입)    →    (디자인 허브)    →    (컴포넌트화)    →   (구현)
+                                              │
+                                              ▼
+                                        .pen 파일로 레포에 저장
+                                        버전 관리 가능
+```
+
+Stitch로 빠르게 프로토타입을 만들고, Figma로 익스포트한 뒤, Pencil Dev에서 VS Code/Cursor 안에서 프로덕션 컴포넌트로 정제한다.
+
 ## 기타 AI 도구
 
 | 도구 | 역할 | 사용 시점 |
@@ -111,12 +131,14 @@ node ~/.claude/hud/omc-hud.mjs
 
 ```
 1. 아이디어 검증            →  /plan-ceo-review — 전제 검증, 10점짜리 제품 찾기
-2. 계획 수립               →  CEO 리뷰 결과를 기반으로 구조화된 계획 파일 생성
-3. 엔지니어링 검증          →  /plan-eng-review — 아키텍처, 테스트, 성능 리뷰
-4. 구현                    →  에이전트가 병렬 실행 (executor, designer 등)
-5. 코드 리뷰               →  /review — 머지 전 diff 리뷰
-6. 배포                    →  /ship — PR 생성, CI 실행
-7. 모니터링                →  /canary — 프로덕션 상태 감시
+2. UI 디자인               →  Stitch (프로토타입) → Figma → Pencil Dev (컴포넌트화)
+3. 계획 수립               →  CEO 리뷰 결과를 기반으로 구조화된 계획 파일 생성
+4. 엔지니어링 검증          →  /plan-eng-review — 아키텍처, 테스트, 성능 리뷰
+5. 구현                    →  에이전트가 병렬 실행 (executor, designer 등)
+6. 디자인 QA               →  /design-review — 시각적 일관성, 간격, 접근성 체크
+7. 코드 리뷰               →  /review — 머지 전 diff 리뷰
+8. 배포                    →  /ship — PR 생성, CI 실행
+9. 모니터링                →  /canary — 프로덕션 상태 감시
 ```
 
 ## 철학
